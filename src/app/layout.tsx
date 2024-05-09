@@ -3,6 +3,7 @@ import { Inter as FontSans } from "next/font/google";
 
 import { cn } from "@/lib/utils";
 import { PropsWithChildren } from "react";
+import { ThemeProvider } from "next-themes";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -17,11 +18,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head />
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen dark:bg-foreground bg-background font-sans antialiased",
           fontSans.variable
         )}
       >
-        {children}
+        <ThemeProvider attribute="class">{children}</ThemeProvider>
       </body>
     </html>
   );
