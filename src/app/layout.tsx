@@ -4,12 +4,20 @@ import { Inter as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { PropsWithChildren } from "react";
 import { ThemeProvider } from "next-themes";
+import { type Metadata } from "next";
+import Banner from "@/components/shared/banner";
 import { Navbar } from "@/components/website/navbar";
 
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
 });
+
+export const metadata: Metadata = {
+  title: "Studium",
+  description:
+    "Your gateway to innovative online learning. Dive in, learn, collaborate, and grow.",
+};
 
 interface RootLayoutProps extends PropsWithChildren {}
 
@@ -24,6 +32,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}
       >
         <ThemeProvider attribute="class">
+          <Banner />
           <Navbar />
           {children}
         </ThemeProvider>

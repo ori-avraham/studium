@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CircleUser, Menu, Package2, Search } from "lucide-react";
+import { CircleUser, GraduationCap, Menu } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -10,9 +10,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import ThemeToggle from "../shared/ThemeToggle";
+import ThemeToggle from "../shared/theme-toggle";
 
 export function Navbar() {
   return (
@@ -22,14 +21,14 @@ export function Navbar() {
           href="#"
           className="flex items-center gap-2 text-lg font-semibold md:text-base"
         >
-          <Package2 className="h-6 w-6" />
-          <span className="sr-only">Acme Inc</span>
+          <GraduationCap className="h-6 w-6" />
+          <span className="sr-only">Studium</span>
         </Link>
         <Link
           href="#"
           className="text-muted-foreground transition-colors hover:text-foreground"
         >
-          Dashboard
+          About
         </Link>
         <Link
           href="#"
@@ -69,8 +68,8 @@ export function Navbar() {
               href="#"
               className="flex items-center gap-2 text-lg font-semibold"
             >
-              <Package2 className="h-6 w-6" />
-              <span className="sr-only">Acme Inc</span>
+              <GraduationCap className="h-6 w-6" />
+              <span className="sr-only">Studium</span>
             </Link>
             <Link
               href="#"
