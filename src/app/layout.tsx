@@ -32,8 +32,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}
       >
         <ThemeProvider attribute="class">
-          <Banner />
-          <Navbar />
           {children}
         </ThemeProvider>
       </body>

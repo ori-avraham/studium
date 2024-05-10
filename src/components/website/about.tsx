@@ -2,7 +2,7 @@ import { BookOpen, ChevronRightIcon, School, ThumbsUp } from "lucide-react";
 
 export default function About() {
   return (
-    <div className="container py-12 lg:py-16 px-3">
+    <div className="container py-12 lg:py-16 px-6 max-w-6xl">
       {/* Grid */}
       <div className="grid md:grid-cols-2 gap-12">
         <div className="lg:w-3/4">
