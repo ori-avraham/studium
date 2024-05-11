@@ -1,11 +1,25 @@
 import { auth } from "@/auth";
+import { Dashboard } from "@/components/layouts/dashboard";
+import DashboardProvider from "@/providers/dashboard-provider";
+import type { Metadata } from "next";
 import { redirect } from "next/navigation";
-import { type PropsWithChildren } from "react";
 
-interface DashboardLayout extends PropsWithChildren {}
+export const metadata: Metadata = {
+  title: "Studium",
+  description:
+    "Your gateway to innovative online learning. Dive in, learn, collaborate, and grow.",
+};
 
-export default async function DashboardLayout({ children }: DashboardLayout) {
+export default async function DashboardLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   const session = await auth();
-  if (!session) redirect("/sign-in");
-  return <div>{children}</div>;
+  if (!session || !session?.user) return redirect("/");
+  return (
+    <DashboardProvider session={session}>
+      <Dashboard>{children}</Dashboard>
+    </DashboardProvider>
+  );
 }
